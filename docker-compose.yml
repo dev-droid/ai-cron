@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  ai-cron:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-cron-web
+    ports:
+      - "8080:8080"
+    environment:
+      # Proxy configuration (optional, for regions requiring proxy like China)
+      # Uncomment and set if needed
+      # - AICRON_PROXY=http://host.docker.internal:7890
+      # - HTTP_PROXY=http://host.docker.internal:7890
+      # - HTTPS_PROXY=http://host.docker.internal:7890
+
+      # API Keys (configure your own)
+      # - GEMINI_API_KEY=your_gemini_key_here
+      # - OPENAI_API_KEY=your_openai_key_here
+      # - ANTHROPIC_API_KEY=your_anthropic_key_here
+
+      # Application settings
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # Persist crontab data
+      - cron-data:/var/spool/cron
+      # Optional: Mount local Ollama if running on host
+      # - /path/to/ollama:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - ai-cron-network
+    # Optional: Connect to host network to access Ollama on localhost
+    # network_mode: host
+
+    # Optional: Include Ollama service if you want local AI
+    # Uncomment the section below to run Ollama in a separate container
+    # ollama:
+    #   image: ollama/ollama:latest
+    #   container_name: ai-cron-ollama
+    #   ports:
+    #     - "11434:11434"
+    #   volumes:
+    #     - ollama-data:/root/.ollama
+    #   networks:
+    #     - ai-cron-network
+    #   restart: unless-stopped
+
+volumes:
+  cron-data:
+    # ollama-data:
+
+networks:
+  ai-cron-network:
+    driver: bridge

@@ -56,6 +56,23 @@ After installing Ollama, pull a model:
 ollama pull llama3
 ```
 
+### Option 3: Using Docker (Recommended for Quick Start)
+
+The easiest way to run ai-cron with all dependencies:
+
+```bash
+# Clone the repository
+git clone https://github.com/dev-droid/ai-cron.git
+cd ai-cron
+
+# Start with Docker Compose
+docker-compose up -d
+
+# Access Web UI at http://localhost:8080
+```
+
+See [DOCKER.md](DOCKER.md) for detailed Docker configuration and deployment options.
+
 ## 🚀 Usage
 
 ### Web UI (Recommended)

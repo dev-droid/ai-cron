@@ -56,6 +56,23 @@ pip install -r requirements.txt  # 或: pip install -e .
 ollama pull llama3
 ```
 
+### 方式 3: 使用 Docker (推荐快速启动)
+
+最简单的运行方式，包含所有依赖:
+
+```bash
+# 克隆仓库
+git clone https://github.com/dev-droid/ai-cron.git
+cd ai-cron
+
+# 使用 Docker Compose 启动
+docker-compose up -d
+
+# 在浏览器访问 http://localhost:8080
+```
+
+详细的 Docker 配置和部署选项请参见 [DOCKER.md](DOCKER.md)。
+
 ## 🚀 使用方法
 
 ### Web UI (推荐)
