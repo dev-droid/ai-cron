@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project Specific
+*.log
+cron.tab
+.env
+
+# Temporary test files
+probe_*.py
+debug_*.py
+test_github.py
+test_header_auth.py
+check_*.py
+brute_*.py
+detect_*.py
+list_models.py
+run_web.py
+clean_models.txt
+models_list.txt
