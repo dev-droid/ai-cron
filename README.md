@@ -41,7 +41,15 @@ poetry install
 ```bash
 git clone https://github.com/dev-droid/ai-cron.git
 cd ai-cron
-pip install -r requirements.txt  # Or: pip install -e .
+pip install -r requirements.txt
+# Or install as editable package:
+# pip install -e .
+```
+
+### Option 3: Direct install from PyPI
+
+```bash
+pip install ai-cron
 ```
 
 ### Optional: Install Ollama (for local AI)
@@ -56,7 +64,7 @@ After installing Ollama, pull a model:
 ollama pull llama3
 ```
 
-### Option 3: Using Docker (Recommended for Quick Start)
+### Option 4: Using Docker (Recommended for Quick Start)
 
 The easiest way to run ai-cron with all dependencies:
 

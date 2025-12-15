@@ -13,6 +13,9 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     cron \
     curl \
+    gcc \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy project files
@@ -31,7 +34,7 @@ ENV PYTHONUNBUFFERED=1
 ENV AICRON_PORT=8080
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
     CMD curl -f http://localhost:8080/ || exit 1
 
 # Default command: Start Web UI

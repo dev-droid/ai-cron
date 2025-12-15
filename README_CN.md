@@ -41,7 +41,15 @@ poetry install
 ```bash
 git clone https://github.com/dev-droid/ai-cron.git
 cd ai-cron
-pip install -r requirements.txt  # 或: pip install -e .
+pip install -r requirements.txt
+# 或安装为可编辑包:
+# pip install -e .
+```
+
+### 方式 3: 直接从 PyPI 安装
+
+```bash
+pip install ai-cron
 ```
 
 ### 可选: 安装 Ollama (用于本地 AI)
@@ -56,7 +64,7 @@ pip install -r requirements.txt  # 或: pip install -e .
 ollama pull llama3
 ```
 
-### 方式 3: 使用 Docker (推荐快速启动)
+### 方式 4: 使用 Docker (推荐快速启动)
 
 最简单的运行方式，包含所有依赖:
 
